@@ -1,2 +1,2 @@
 # hexo-mengzh
-hexo blog code
+this repository is used to save hexo blog code

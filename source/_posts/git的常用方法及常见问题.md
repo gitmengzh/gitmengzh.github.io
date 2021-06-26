@@ -10,3 +10,4 @@ tags: git study
 * git push
 * git checkout -b
 * git checkout <branch name>
+* git git push --set-upstream origin company   github新建分支

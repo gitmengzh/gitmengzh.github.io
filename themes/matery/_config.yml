@@ -13,9 +13,9 @@ menu:
   Archives:
     url: /archives
     icon: fas fa-archive
-  # About:
-  #   url: /about
-  #   icon: fas fa-user-circle
+  About:
+    url: /about
+    icon: fas fa-user-circle
   # Contact:
   #   url: /contact
   #   icon: fas fa-comments

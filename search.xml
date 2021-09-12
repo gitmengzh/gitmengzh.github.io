@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Linux查看日志的几个常用命令</title>
+    <url>/2021/07/06/Linux%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="本文主要介绍几个linux常用的查看日志命令及一些常见的使用场景"><a href="#本文主要介绍几个linux常用的查看日志命令及一些常见的使用场景" class="headerlink" title="本文主要介绍几个linux常用的查看日志命令及一些常见的使用场景"></a>本文主要介绍几个linux常用的查看日志命令及一些常见的使用场景</h2><ol>
+<li>tail  用于查看文件内容<ul>
+<li>tail -f  filename 动态查看，一般用于动态查看日志</li>
+<li>tail -n num filename 查看文件尾部num行内容</li>
+<li>tail -n +num filename 显示从num行开始的内容</li>
+<li>tail -fn num filename 动态查看最后num行命令</li>
+<li>tail -n num filenma | grep ‘string’  查找从第num行开始，包含string的所有行</li>
+</ul>
+</li>
+<li>head 查看文件开头的内容，参数-n, 后边跟显示的行数，默认显示10行的内容<ul>
+<li>-n num 显示从开头前num行的内容</li>
+</ul>
+</li>
+<li>cat 命令用于连接文件并打印到标准输出设备上<ul>
+<li>cat -n filename1 &gt; filename2 对每一行加上行数输出到filename2，如果没有filename2,直接添加行号输出</li>
+<li>cat -b filename 与-n类似，但是对空行不编号 </li>
+</ul>
+</li>
+<li>less 与more命令类似，支持搜索，上下翻页<ul>
+<li>q  退出</li>
+<li>space/pagedown     向下翻页</li>
+<li>pageup     向上翻页</li>
+<li>空格       向下一行</li>
+</ul>
+</li>
+<li>more  与cat命令类似，不过会一页一页显示内容<ul>
+<li>more -num 一次显示num行，num为行数</li>
+<li>more +num 从第num行开始显示</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见使用场景"><a href="#常见使用场景" class="headerlink" title="常见使用场景"></a>常见使用场景</h3><p>tail/head/cat/less/more filename | grep ‘sss’   与grep一同使用<br>ps -ef | less  与其他命令用于分页操作</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的常用方法及常见问题</title>
+    <url>/2021/06/26/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="git-的常用方法"><a href="#git-的常用方法" class="headerlink" title="git 的常用方法"></a>git 的常用方法</h1><ul>
+<li>git clone </li>
+<li>git add </li>
+<li>git commit </li>
+<li>git push</li>
+<li>git checkout -b</li>
+<li>git checkout <branch name></li>
+<li>git git push –set-upstream origin company   github新建分支</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/07/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo安装及常用方法</title>
+    <url>/2021/06/25/hexo%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>本文主要记录一下hexo的安装及常用方法</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>hexo安装</p>
+<ol>
+<li>安装nodejs和npm， 官网下载nodejs即可，nodejs安装后会一并安装npm</li>
+<li>然后安装npm install -g hexo<h1 id="hexo使用"><a href="#hexo使用" class="headerlink" title="hexo使用"></a>hexo使用</h1></li>
+<li>初始化使用<ul>
+<li>hexo init</li>
+</ul>
+</li>
+<li>常用方法<ul>
+<li>hexo  g     生成</li>
+<li>hexo  s     启动服务</li>
+<li>hexo  d     推送到git服务器</li>
+<li>hexo  new //&lt;title//&gt;  </li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux命令之grep</title>
+    <url>/2021/07/06/linux%E5%91%BD%E4%BB%A4%E4%B9%8Bgrep/</url>
+    <content><![CDATA[<h2 id="本文主要介绍linux命令中的grep常用方法"><a href="#本文主要介绍linux命令中的grep常用方法" class="headerlink" title="本文主要介绍linux命令中的grep常用方法"></a>本文主要介绍linux命令中的grep常用方法</h2><p>grep awk sed 被称为Linux文本三剑客，这里主要介绍grep用法<br>grep 用于查询文件里符合要求的字符串，并返回对应行，使用格式  grep  [选项]  ”模式“  [文件]</p>
+<ol>
+<li>grep 常用得几个选项参数<ul>
+<li>-n 显示行号</li>
+<li>-i 忽略大小写</li>
+<li>-v 显示不包含匹配文本的所有行</li>
+<li>-x 只显示全列符合的列</li>
+<li>-w 只显示全字符符合的列</li>
+<li>-o 只显示匹配PATTERN 部分<br><img src="2021-07-07_203549.png" alt="avatar"></li>
+<li>-A/B/Cn  A/B/C三个参数，后边跟一个具体的数字(n)，分别显示匹配到的字符串所在的行及其后n行/前n行/前后各n行<br><img src="2021-07-07_192708.png" alt="avatar"></li>
+</ul>
+</li>
+<li>grep的模式<ul>
+<li>直接输入要匹配的字符字符串  grep ‘xxx’ filename  </li>
+<li>使用正则表达式  grep “正则” filename</li>
+</ul>
+</li>
+<li>grep常用场景<ul>
+<li>ps -ef | grep  ‘xxx’ 查找指定进程</li>
+<li>grep file *test    在当前目录中，查找后缀有 file 字样的文件中包含 test 字符串的文件</li>
+<li>grep ‘xxx’ file1 file2 …  在多个文件中查找xxx</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux命令之sed</title>
+    <url>/2021/07/07/linux%E5%91%BD%E4%BB%A4%E4%B9%8Bsed/</url>
+    <content><![CDATA[<h2 id="本文主要介绍linux命令中的sed常用方法"><a href="#本文主要介绍linux命令中的sed常用方法" class="headerlink" title="本文主要介绍linux命令中的sed常用方法"></a>本文主要介绍linux命令中的sed常用方法</h2><p>grep awk sed 被称为Linux文本三剑客，这里开始介绍sed用法<br>sed 使用脚本处理文本文件，可依照脚本的指令处理、编辑文本，主要用于编辑一个或者多个文件，简化对文本的反复操作<br>sed [选项] [脚本命令] filename</p>
+<ul>
+<li>常用参数<ol>
+<li>-e 脚本命令</li>
+<li>-f 脚本文件</li>
+</ol>
+</li>
+<li>常用命令 [addrss]–可以为空，一个数字，或者两个数字<ol>
+<li>sed a  sed ‘[address]a [添加的内容]’ filename     在指定行后添加一行</li>
+<li>sed i  sed ‘[address]i [添加的内容]’ filename    在指定行前添加一行<br><img src="2021-07-08_192833.png" alt="sed"></li>
+<li>sed d  sed ‘[n1,n2]d’ filename     删除指定行<br><img src="2021-07-08_200827.png" alt="sed"></li>
+<li>sed c  取代 ‘sed [n1,n2]c [替换行]’  替换n1行的内容或n1,n2之间的内容<br><img src="2021-07-08_193452.png" alt="sed"></li>
+<li>sed s  替换 [address]s/<strong>pattern</strong>/<strong>replacement</strong>/flags   加粗为必填，通常与正则表达式一起使用</li>
+</ol>
+  *** flags<pre><code>  *** n       数字范围1-512，要替换的字符串出现第几次时才进行替换
+  *** g       有g全部替换一次，如果没有，只替换一次
+  *** p       与-n选项一起使用
+  *** w file  将文件写入到文件中
+  *** &amp;       用正则表达式匹配的内容进行替换
+  *** \n      匹配第 n 个子串，该子串之前在 pattern 中用 \(\) 指定
+  *** \       转义（转义替换部分包含：&amp;、\ 等）
+</code></pre>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用jenkin实现自动部署hexo静态博客到GithubPages</title>
+    <url>/2021/07/01/%E7%94%A8jenkin%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0GithubPages/</url>
+    <content><![CDATA[<h3 id="为什么写这边文章"><a href="#为什么写这边文章" class="headerlink" title="为什么写这边文章"></a>为什么写这边文章</h3><p>前期自己使用hexo+GithubPages搭建了一个博客，但是要实现公司和家里多台电脑得同步，因此使用github的私有仓库托管源代码，同时近期学习jenkins，然后就考虑每次提交代码后，使用jenkins自动实现更新部署博客。</p>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ol>
+<li>基于GithubPages+hexo搭建一个静态博客。</li>
+<li>准备jenkins环境，本文使用云服务端（centos7.x环境）搭建得jenkins，你也可以使用再本地环境中搭建得jenkins<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3></li>
+<li>在jenkins， 新建一个自由风格得项目</li>
+<li>在项目中填写你保存博客代码的github仓库地址</li>
+<li>新建一个证书key，用于连接github仓库</li>
+<li>在github端对应仓库，新建一个webhook的developerkey，然后添加到jenkins </li>
+<li>在jenkins环境中安装hexo环境（git,nodejs,npm），用于shell脚本执行hexo d推送博客</li>
+</ol>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>jenkins</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令之awk</title>
+    <url>/2021/07/09/Linux%E5%91%BD%E4%BB%A4%E4%B9%8Bawk/</url>
+    <content><![CDATA[<p>grep awk sed 被称为Linux文本三剑客，本篇文章主要介绍awk<br><strong>awk</strong> 是一种处理文本文件的语言，是一个强大的文本分析工具<br>语法： awk [选项参数] ‘script’ var=value files:</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python之接口mock</title>
+    <url>/2021/07/10/python%E4%B9%8B%E6%8E%A5%E5%8F%A3mock/</url>
+    <content><![CDATA[<h2 id="什么是接口mock"><a href="#什么是接口mock" class="headerlink" title="什么是接口mock"></a>什么是接口mock</h2><h2 id="为什么要使用接口接口"><a href="#为什么要使用接口接口" class="headerlink" title="为什么要使用接口接口"></a>为什么要使用接口接口</h2><h2 id="如何使用python实现mock接口"><a href="#如何使用python实现mock接口" class="headerlink" title="如何使用python实现mock接口"></a>如何使用python实现mock接口</h2>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>mock</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【leetcode】26.删除有序数组中的重复项</title>
+    <url>/2021/07/13/%E3%80%90LeetCode%E3%80%9126.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<h1 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a>26. <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array">删除有序数组中的重复项</a></h1><p><font color = #5C3317 size=4 face="verdana">题目描述：</font><br>给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。<br>不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
+<ul>
+<li>示例 1：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure></li>
+<li>示例 2：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">题目分析：</font></p>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>leetcode</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【leetcode】122.买卖股票的最佳时机.2</title>
+    <url>/2021/07/14/%E3%80%90leetcode%E3%80%91122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-2/</url>
+    <content><![CDATA[<h1 id="122-买卖股票的最佳时机-II"><a href="#122-买卖股票的最佳时机-II" class="headerlink" title="122.买卖股票的最佳时机 II"></a>122.<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii">买卖股票的最佳时机 II</a></h1><p><font color = #5C3317 size=4 face="verdana">题目描述：</font><br>给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。<br>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<ul>
+<li>示例 1:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: prices = [7,1,5,3,6,4]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</span><br><span class="line">     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</span><br></pre></td></tr></table></figure></li>
+<li>示例 2:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: prices = [1,2,3,4,5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</span><br><span class="line">     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</span><br></pre></td></tr></table></figure></li>
+<li>示例 3:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: prices = [7,6,4,3,1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">题目分析：</font></p>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>leetcode</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【leetcode】5814.新增的最少台阶数</title>
+    <url>/2021/07/19/%E3%80%90leetcode%E3%80%915814-%E6%96%B0%E5%A2%9E%E7%9A%84%E6%9C%80%E5%B0%91%E5%8F%B0%E9%98%B6%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="5814-新增的最少台阶数"><a href="#5814-新增的最少台阶数" class="headerlink" title="5814.新增的最少台阶数"></a>5814.<a href="https://leetcode-cn.com/problems/add-minimum-number-of-rungs/">新增的最少台阶数</a></h1><p><font color = #5C3317 size=4 face="verdana">题目描述：</font></p>
+<p>给你一个 严格递增 的整数数组 rungs ，用于表示梯子上每一台阶的 高度 。当前你正站在高度为 0 的地板上，并打算爬到最后一个台阶。<br>另给你一个整数 dist 。每次移动中，你可以到达下一个距离你当前位置（地板或台阶）不超过 dist 高度的台阶。<br>当然，你也可以在任何正 整数 高度处插入尚不存在的新台阶。<br>返回爬到最后一阶时必须添加到梯子上的 最少 台阶数。</p>
+<blockquote>
+<p>示例 1：</p>
+</blockquote>
+<table><tr><td bgcolor="grey"><font color="white">
+输入：rungs = [1,3,5,10], dist = 2 <br>
+输出：2 <br>
+解释：<br>
+现在无法到达最后一阶。在高度为 7 和 8 的位置增设新的台阶，以爬上梯子。梯子在高度为 [1,3,5,7,8,10] 的位置上有台阶。
+</font></td></tr></table>
+
+<blockquote>
+<p>示例 2：</p>
+</blockquote>
+<table><tr><td bgcolor="grey"><font color="white">
+输入：rungs = [3,6,8,10], dist = 3 <br>
+输出：0 <br>
+解释：<br>
+这个梯子无需增设新台阶也可以爬上去。
+</font></td></tr></table>
+
+<blockquote>
+<p>示例 3：</p>
+</blockquote>
+<table><tr><td bgcolor="grey"><font color="white">
+输入：rungs = [3,4,6,7], dist = 2 <br>
+输出：1 <br>
+解释：<br>
+现在无法从地板到达梯子的第一阶。在高度为 1 的位置增设新的台阶，以爬上梯子。梯子在高度为 [1,3,4,6,7] 的位置上有台阶。
+</font></td></tr></table>
+
+<blockquote>
+<p>示例 4：</p>
+</blockquote>
+<table><tr><td bgcolor="grey"><font color="white">
+输入：rungs = [5], dist = 10 <br>
+输出：0 <br>
+解释：这个梯子无需增设新台阶也可以爬上去。<br>
+</font></td></tr></table>
+
+<blockquote>
+<p><strong>提示：</strong></p>
+</blockquote>
+<ul>
+<li>1 &lt;= rungs.length &lt;= 105***</li>
+<li>1 &lt;= rungs[i] &lt;= 109</li>
+<li>1 &lt;= dist &lt;= 109</li>
+<li>rungs 严格递增</li>
+</ul>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">题目分析：</font></p>
+<p>我们可以模拟爬台阶的过程：</p>
+<ul>
+<li>每当计划爬上新一级台阶时，需要增设的台阶数目可以表示为当前位置与新一级台阶位置（目标位置）的高度差的函数。</li>
+<li>假设高度差为 d&gt;0，可直接到达的两个台阶的最大间隔为 dist。此时我们可以判断 d与 dist 的大小来判断是否需要新增台阶。</li>
+<li>如果 <strong>d ≤ dist</strong> ，此时无需新增台阶。</li>
+<li>如果 <strong>d &gt; dist</strong>，此时无法直接到达，我们可以每隔 dist 高度插入新台阶，直至新台阶与目标位置的间隔不大于dist。<br>显然，这种方案所需增设台阶数目最小.<br>由于台阶数组 rungs 严格递增，因此我们将当前高度初值设为 0，并按顺序遍历 rungs 数组以模拟爬台阶的过程。每当遍历到新一级台阶时，我们计算与当前位置的高度差，进而计算最少需要增设的台阶数目，并将当前高度更新为新一级台阶的高度。我们维护这些台阶数目的总和，并最终返回作为答案。</li>
+</ul>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">代码：</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addRungs</span>(<span class="params">rungs, dist</span>):</span></span><br><span class="line">    start = res = <span class="number">0</span>  <span class="comment"># 当前高度为0，且需要增加台阶数为0</span></span><br><span class="line">    <span class="keyword">for</span> h <span class="keyword">in</span> rungs:  <span class="comment"># 遍历阶梯高度</span></span><br><span class="line">        res += (h-start-<span class="number">1</span>)//dist   <span class="comment"># 如果目标台阶高度与当前高度差大于dist的情况（h）</span></span><br><span class="line">        start = h</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>leetcode</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【leetcode】7.整数反转</title>
+    <url>/2021/07/21/%E3%80%90leetcode%E3%80%917-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</url>
+    <content><![CDATA[<h1 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7. 整数反转"></a>7. <a href="https://leetcode-cn.com/problems/reverse-integer">整数反转</a></h1><p><font color = #5C3317 size=4 face="verdana">题目描述：</font></p>
+<p>给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。<br>如果反转后整数超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。<br>假设环境不允许存储 64 位整数（有符号或无符号）。</p>
+<blockquote>
+<p>示例 1：</p>
+</blockquote>
+<pre><code>输入：x = 123   输出：321
+</code></pre>
+<blockquote>
+<p>示例 2：</p>
+</blockquote>
+<pre><code>输入：x = -123  输出：-321
+</code></pre>
+<blockquote>
+<p>示例 3：</p>
+</blockquote>
+<pre><code>输入：x = 120   输出：21
+</code></pre>
+<blockquote>
+<p>示例 4：</p>
+</blockquote>
+<pre><code>输入：x = 0 输出：0
+</code></pre>
+<blockquote>
+<p>提示：</p>
+</blockquote>
+<pre><code>-2^31 &lt;= x &lt;= 2^31 - 1
+</code></pre>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">题目分析：</font></p>
+<blockquote>
+<p>本题需要注意三点</p>
+</blockquote>
+<ol>
+<li>输入值范围<br>题目假设不允许存储64位整数，所以不需要考虑，否则要考虑数值范围溢出</li>
+<li>负数处理<br>对于负数，需要对符号进行特殊处理</li>
+<li>输入值范围<br>对于输出值范围，-2^31 &lt;= x &lt;= 2^31 - 1,超过这个范围，返回0</li>
+</ol>
+<hr>
+<p><font color = #5C3317 size=4 face="verdana">代码：</font></p>
+<blockquote>
+<p>方法1： 字符串方法处理</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">x</span>):</span></span><br><span class="line">    str_x = <span class="built_in">str</span>(x)</span><br><span class="line">    <span class="keyword">if</span> str_x[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">        res = <span class="built_in">int</span>(<span class="string">&#x27;-&#x27;</span>+str_x[:<span class="number">0</span>:-<span class="number">1</span>])  <span class="comment"># 当x为负数，那么把符号单独拿出来，其他位进行反转，然后转换成整数</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        res = <span class="built_in">int</span>(str_x[::-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> x &lt; -<span class="number">2</span> ** <span class="number">31</span> <span class="keyword">or</span> x &gt; <span class="number">2</span> ** <span class="number">31</span>:  <span class="comment"># 当结果不在范围内，返回0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>方法2： 数学方法处理</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">x</span>):</span></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">abs</span>(x) ==x:   <span class="comment"># 当x不小于0</span></span><br><span class="line">        <span class="keyword">while</span> x:</span><br><span class="line">            res = res * <span class="number">10</span> + x % <span class="number">10</span> <span class="comment"># 取余，然后与上一次的结果*10，达到反转效果 </span></span><br><span class="line">            x = x // <span class="number">10</span>         <span class="comment"># x结果每次取整，直到为0</span></span><br><span class="line">    <span class="keyword">else</span>:           <span class="comment"># 当x小于0</span></span><br><span class="line">        x = <span class="built_in">abs</span>(x)</span><br><span class="line">        <span class="keyword">while</span> x:</span><br><span class="line">            res = res * <span class="number">10</span> + x % <span class="number">10</span></span><br><span class="line">            x = x // <span class="number">10</span></span><br><span class="line">        res = -res</span><br><span class="line">    <span class="keyword">if</span> res &gt; <span class="number">2</span>**<span class="number">31</span> - <span class="number">1</span> <span class="keyword">or</span> res &lt; -<span class="number">2</span>**<span class="number">31</span>:</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>leetcode</tag>
+        <tag>str</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MarkDown基础语法（-）</title>
+    <url>/2021/07/20/MarkDown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%88-%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="markdown-简介："><a href="#markdown-简介：" class="headerlink" title="markdown 简介："></a>markdown 简介：</h1><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><ol>
+<li><p>段落引用</p>
+<blockquote>
+<p>使用’&gt;’引用段落</p>
+</blockquote>
+<blockquote>
+<p>使用html引用段落</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据测试（-）</title>
+    <url>/2021/07/22/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%EF%BC%88-%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="什么是大数据测试"><a href="#什么是大数据测试" class="headerlink" title="什么是大数据测试"></a>什么是大数据测试</h1><h1 id="如何进行大数据测试"><a href="#如何进行大数据测试" class="headerlink" title="如何进行大数据测试"></a>如何进行大数据测试</h1><h2 id="如何保证大数据测试的准确性和及时性"><a href="#如何保证大数据测试的准确性和及时性" class="headerlink" title="如何保证大数据测试的准确性和及时性"></a>如何保证大数据测试的准确性和及时性</h2>]]></content>
+      <categories>
+        <category>测试知识</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>测试知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2021/08/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="TCP-IP-分层"><a href="#TCP-IP-分层" class="headerlink" title="TCP/IP 分层"></a>TCP/IP 分层</h1><h1 id="TCP-UDP的区别"><a href="#TCP-UDP的区别" class="headerlink" title="TCP/UDP的区别"></a>TCP/UDP的区别</h1><h1 id="https原理"><a href="#https原理" class="headerlink" title="https原理"></a>https原理</h1><h1 id="TCP三次握手，四次挥手"><a href="#TCP三次握手，四次挥手" class="headerlink" title="TCP三次握手，四次挥手"></a>TCP三次握手，四次挥手</h1><h1 id="为什么是三次握手，四次挥手"><a href="#为什么是三次握手，四次挥手" class="headerlink" title="为什么是三次握手，四次挥手"></a>为什么是三次握手，四次挥手</h1><h1 id="TCP怎么保证传出的可靠性"><a href="#TCP怎么保证传出的可靠性" class="headerlink" title="TCP怎么保证传出的可靠性"></a>TCP怎么保证传出的可靠性</h1><h1 id="浏览器请求一个网址的过程"><a href="#浏览器请求一个网址的过程" class="headerlink" title="浏览器请求一个网址的过程"></a>浏览器请求一个网址的过程</h1><h1 id="http与https区别"><a href="#http与https区别" class="headerlink" title="http与https区别"></a>http与https区别</h1><h1 id="负载均衡有哪些实现方式"><a href="#负载均衡有哪些实现方式" class="headerlink" title="负载均衡有哪些实现方式"></a>负载均衡有哪些实现方式</h1><h1 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h1>]]></content>
+      <categories>
+        <category>网络知识</category>
+      </categories>
+      <tags>
+        <tag>网络知识</tag>
+        <tag>TCP/IP</tag>
+        <tag>http</tag>
+        <tag>socket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos常用安装软件方式</title>
+    <url>/2021/08/02/centos%E5%B8%B8%E7%94%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="本文主要介绍几种常用的centos安装或者升级的方式，以mysql，git-python等为例"><a href="#本文主要介绍几种常用的centos安装或者升级的方式，以mysql，git-python等为例" class="headerlink" title="本文主要介绍几种常用的centos安装或者升级的方式，以mysql，git, python等为例"></a>本文主要介绍几种常用的centos安装或者升级的方式，以mysql，git, python等为例</h1><h2 id="yum安装mysql-https-blog-csdn-net-qq-36582604-article-details-80526287"><a href="#yum安装mysql-https-blog-csdn-net-qq-36582604-article-details-80526287" class="headerlink" title="yum安装mysql   https://blog.csdn.net/qq_36582604/article/details/80526287"></a>yum安装mysql   <a href="https://blog.csdn.net/qq_36582604/article/details/80526287">https://blog.csdn.net/qq_36582604/article/details/80526287</a></h2><ul>
+<li>mysql登录  mysql -uroot -p </li>
+<li>默认登录密码  <code>sudo grep &#39;temporary password&#39; /var/log/mysqld.log</code>   命令去查看<h2 id="编译安装pyhton"><a href="#编译安装pyhton" class="headerlink" title="编译安装pyhton"></a>编译安装pyhton</h2><h2 id="升级git"><a href="#升级git" class="headerlink" title="升级git"></a>升级git</h2></li>
+</ul>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>centos</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python进阶之协程</title>
+    <url>/2021/08/03/python%E8%BF%9B%E9%98%B6%E4%B9%8B%E5%8D%8F%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>python进阶之装饰器</title>
+    <url>/2021/08/03/python%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python进阶之面向对象（一）</title>
+    <url>/2021/08/03/python%E8%BF%9B%E9%98%B6%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>mysql知识总结</title>
+    <url>/2021/08/22/mysql%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="mysql-基础知识及面试"><a href="#mysql-基础知识及面试" class="headerlink" title="mysql 基础知识及面试"></a>mysql 基础知识及面试</h1><h2 id="mysql-事务"><a href="#mysql-事务" class="headerlink" title="mysql 事务"></a>mysql 事务</h2><h2 id="mysql-索引"><a href="#mysql-索引" class="headerlink" title="mysql 索引"></a>mysql 索引</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python进阶之生成器</title>
+    <url>/2021/08/06/python%E8%BF%9B%E9%98%B6%E4%B9%8B%E7%94%9F%E6%88%90%E5%99%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>生成器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>功能测试点总结（-）</title>
+    <url>/2021/08/21/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E7%82%B9%E6%80%BB%E7%BB%93%EF%BC%88-%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="功能测试点总结（-）"><a href="#功能测试点总结（-）" class="headerlink" title="功能测试点总结（-）"></a>功能测试点总结（-）</h1><p>列表测试点：</p>
+]]></content>
+      <categories>
+        <category>测试知识</category>
+      </categories>
+      <tags>
+        <tag>测试知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用的企业搜索应用服务器</title>
+    <url>/2021/08/11/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BC%81%E4%B8%9A%E6%90%9C%E7%B4%A2%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="常用的企业搜索应用服务器"><a href="#常用的企业搜索应用服务器" class="headerlink" title="常用的企业搜索应用服务器"></a>常用的企业搜索应用服务器</h1><h2 id="lucene"><a href="#lucene" class="headerlink" title="lucene"></a>lucene</h2><h2 id="es-Elasticsearch"><a href="#es-Elasticsearch" class="headerlink" title="es(Elasticsearch)"></a>es(Elasticsearch)</h2><h2 id="solr"><a href="#solr" class="headerlink" title="solr"></a>solr</h2>]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>es</tag>
+        <tag>solr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用的消息中间件</title>
+    <url>/2021/08/11/%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="常用的消息中间件"><a href="#常用的消息中间件" class="headerlink" title="常用的消息中间件"></a>常用的消息中间件</h1><h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><h2 id="rabbitmq"><a href="#rabbitmq" class="headerlink" title="rabbitmq"></a>rabbitmq</h2><h2 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h2>]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>rabbitmq</tag>
+        <tag>kafka</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一次线上生产事故</title>
+    <url>/2021/08/21/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E7%94%9F%E4%BA%A7%E4%BA%8B%E6%95%85/</url>
+    <content><![CDATA[<h1 id="记录一次线上生产“事故”"><a href="#记录一次线上生产“事故”" class="headerlink" title="记录一次线上生产“事故”"></a>记录一次线上生产“事故”</h1><p>虽然题目中有事故这么一说，但是我个人对这个定义并不太准确，但是其中暴露的问题却很多，及有针对性，所以在这里记录一下。</p>
+<h3 id="事件背景："><a href="#事件背景：" class="headerlink" title="事件背景："></a>事件背景：</h3><p><strong>项目背景</strong>：<br>项目为批量投放广告工具，即批量创建广告，通过平台mapi，提交到广告平台（头条，快手），在工具中，完成批量配置创意，定向，人群等信息，提高效率。<br><strong>事件描述</strong>：前日上线，前端合并代码问题，导致某未测试完成功能上线。简单介绍下这个小功能，提交前预览列表支持批量修改配置，比如定向人群这些，原有选项是如果你有100条广告计划，每页展示10条，勾选后将会选中全部100条，新功能增加一个当前页和所有页选项，如果用户选择当前页，那么你勾选后，只选择本页内容，选择所有页，那么与原来功能一致。应该说功能本身并无明显bug，但此功能默认值为当前页，且提示不够明显，这就导致可能某些用户可能不太关注这些。昨日有用户提交广告一直提示一个账号必填链接（此链接为白名单功能，只有某些账号必填，因此程序本身并没有设置必填）没有填写，但是用户说他填了，经过排查发现，用户勾选并设置了链接，但是由于此功能，用户没有注意到，导致其实只有第一页设置了此链接。<br>经过技术老大设想后发现一个更严重的问题，<strong>人群包</strong>，因为人群包也不是必填功能，且为一个比较敏感的功能，因为一旦没有设置人群，可能会导致花钱如流水，很恐怖。<br><strong>解决方案</strong>：<br>紧急下线此功能，且开发开始排查已经创建广告计划，通过规律，找到对应客户，然后通知客户是否设置人群包，让他去检查（说辞自然是我们检测到xxx,跟您确认一下是不是这样）</p>
+<h3 id="分析-amp-amp-总结经验"><a href="#分析-amp-amp-总结经验" class="headerlink" title="分析&amp;&amp;总结经验:"></a>分析&amp;&amp;总结经验:</h3><ol>
+<li>该功能本身在周四晚上被上线，周四晚上我们完成上线回归测试（主要测试上线功能，非上线功能由于时间有限，暂时不管）。其实这个选项只要创建广告计划必看的地方，但是我们四个人都没看见，这是一个很严重的细节问题，虽然这不是本次时间的根本或者直接原因，但是却对产生了很大的触动，因为作为一个QA，这么一个明显的改变都没注意到，这是不应该的，我们还是对产品本身缺乏了解</li>
+<li>对于修改用户行为缺乏足够的敏感</li>
+</ol>
+<ul>
+<li>这个功能最根本的原因在于产品设计修改了用户行为，且没有给用户足够的提示</li>
+<li>用户会想当然的以为勾选的全部，这其实并不是一个功能上的问题，而是一个用户行为的问题，这种bug不会比功能问题影响小。这个是一种意识，并不是说你测试就能出来的，你首先要意识到这一点。这个需要自己有意识的培养。</li>
+<li>其实就算晚几天上线，这个问题依旧存在，究其所以，还是因为从产品-开发-测试，都没有注意到这一点，这才是根本问题</li>
+</ul>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><ol>
+<li>目前为止，我还是有进步的，起码很多产品逻辑我都是熟悉的，但是我还不够熟悉</li>
+<li>在这个项目组，我觉得我以前的习惯没了（可能就没有过）可能没有进步，就是后退吧</li>
+<li>对于细节的把我，需要想多一点，想的东西还是太少了，这种意识就是最好的成长</li>
+<li>对于线上问题的总结很有必要</li>
+</ol>
+]]></content>
+      <categories>
+        <category>测试工作</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>工作记录</tag>
+      </tags>
+  </entry>
+</search>
